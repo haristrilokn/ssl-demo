@@ -14,8 +14,8 @@ class HomeProvider extends ChangeNotifier {
 
   Future<SecurityContext> get globalContext async {
     print("Loading SSL certificate...");
-    // final sslCert = await rootBundle.load('assets/stackoverflow.crt');
-    final sslCert = await rootBundle.load('assets/newsapi.org.crt');
+    final sslCert = await rootBundle.load('assets/stackoverflow.crt');
+    // final sslCert = await rootBundle.load('assets/newsapi.org.crt');
     SecurityContext securityContext = SecurityContext(withTrustedRoots: false);
     securityContext.setTrustedCertificatesBytes(sslCert.buffer.asInt8List());
     print("SSL certificate loaded.");
